@@ -7,12 +7,12 @@ ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk \
     PATH=$CATALINA_HOME/bin:$PATH
 
 # Install Java 8 and necessary packages
-RUN yum -y update && \
-    yum -y install java-1.8.0-openjdk-devel wget && \
+RUN apt-get -y update && \
+    apt-get -y install java-1.8.0-openjdk-devel wget && \
     yum clean all
 
 # Install the unzip package
-RUN yum -y install unzip
+RUN apt-get -y install unzip
 
 # Download and extract Tomcat
 RUN wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.93/bin/apache-tomcat-8.5.93.zip && \
