@@ -1,5 +1,5 @@
 # Use the CentOS 7 base image
-FROM tomcat:8
+FROM centos:7
 
 # Set environment variables
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk \
@@ -7,12 +7,12 @@ ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk \
     PATH=$CATALINA_HOME/bin:$PATH
 
 # Install Java 8 and necessary packages
-RUN apt-get -y update && \
-    apt-get -y install java-1.8.0-openjdk-devel wget && \
-    apt-get clean all
+RUN yum -y update && \
+    yum -y install java-1.8.0-openjdk-devel wget && \
+    yum clean all
 
 # Install the unzip package
-RUN apt-get -y install unzip
+RUN yum -y install unzip
 
 # Download and extract Tomcat
 RUN wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.93/bin/apache-tomcat-8.5.93.zip && \
@@ -25,3 +25,6 @@ RUN chmod +x $CATALINA_HOME/bin/catalina.sh
 
 # Expose the default Tomcat port
 EXPOSE 8000
+
+# Set the command to start Tomcat
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]
