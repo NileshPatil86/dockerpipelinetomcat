@@ -146,5 +146,5 @@ RUN set -eux; \
 	fi
 
 EXPOSE 8080
-EXPOSE 9000
+EXPOSE 9001
 CMD ["catalina.sh", "run"]
