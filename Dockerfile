@@ -24,7 +24,7 @@ RUN wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.93/bin/apache-tomcat-8.5.
 RUN chmod +x $CATALINA_HOME/bin/catalina.sh
 
 # Expose the default Tomcat port
-EXPOSE 8585
+EXPOSE 8080
 
 # Set the command to start Tomcat
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
