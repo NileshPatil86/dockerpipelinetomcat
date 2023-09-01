@@ -2,7 +2,7 @@
 FROM centos:7
 
 # Set environment variables
-ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk \
+ENV JAVA_HOME=/usr/lib/jvm/java-11.0.20-openjdk \
     CATALINA_HOME=/opt/tomcat \
     PATH=$CATALINA_HOME/bin:$PATH
 
