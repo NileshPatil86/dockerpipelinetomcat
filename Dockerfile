@@ -9,7 +9,7 @@ ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk \
 # Install Java 8 and necessary packages
 RUN apt-get -y update && \
     apt-get -y install java-1.8.0-openjdk-devel wget && \
-    yum clean all
+    apt-get clean all
 
 # Install the unzip package
 RUN apt-get -y install unzip
