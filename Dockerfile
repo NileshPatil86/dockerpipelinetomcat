@@ -8,7 +8,7 @@ ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk \
 
 # Install Java 8 and necessary packages
 RUN yum -y update && \
-    yum -y install java-17.0.8-openjdk-devel wget && \
+    yum -y install java-11.0.20-openjdk-devel wget && \
     yum clean all
 
 # Install the unzip package
