@@ -19,14 +19,6 @@ RUN wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.93/bin/apache-tomcat-8.5.
     unzip apache-tomcat-8.5.93.zip -d /opt && \
     rm apache-tomcat-8.5.93.zip && \
     mv /opt/apache-tomcat-8.5.93 $CATALINA_HOME
-
-#WORKDIR /opt/tomcat
-#ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-connector.jar lib/
-# we can download student webapplication form using add command as below 
-RUN wget https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war /opt && \
-    unzip student.war -d /opt/tomcat/webapps && \ 
-    
-#RUN  unzip student.war  
     
 
 # Set executable permissions for catalina.sh
