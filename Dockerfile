@@ -23,8 +23,9 @@ RUN wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.93/bin/apache-tomcat-8.5.
 #WORKDIR /opt/tomcat
 #ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-connector.jar lib/
 # we can download student webapplication form using add command as below 
-RUN wget https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war $CATALINA_HOME
-RUN unzip student.war 
+RUN wget https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war /opt && \
+    unzip student.war -d /opt/tomcat/webapps && \ 
+    
 #RUN  unzip student.war  
     
 
